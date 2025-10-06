@@ -341,59 +341,62 @@ export default function OverviewTab({
       {/* Bottom Charts */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {/* Productivity Score */}
-        <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-5">
-          <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-4">Productivity Score</h3>
-          <div className="relative h-48 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" className="w-full h-full">
-              {/* Donut segments - Excellent (Green) 48% */}
-              <path
-                d="M 120 20 A 80 80 0 0 1 198 95 L 120 95 Z"
-                fill="#10b981"
-              />
+<div className="bg-white rounded-lg border border-gray-200 p-4 md:p-5">
+  <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-4">Productivity Score</h3>
+  <div className="relative h-48 flex items-center justify-center">
+    <svg viewBox="0 0 240 200" className="w-full h-full">
+      {/* Excellent (Green) 48% - starts at top, goes 172.8° clockwise */}
+      <path
+        d="M 120 95 L 120 15 A 80 80 0 0 1 199.09 100 Z"
+        fill="#10b981"
+      />
 
-              {/* Good (Blue) 35% */}
-              <path
-                d="M 198 95 A 80 80 0 0 1 130 175 L 120 95 Z"
-                fill="#3b82f6"
-              />
+      {/* Good (Blue) 35% - continues 126° more */}
+      <path
+        d="M 120 95 L 199.09 100 A 80 80 0 0 1 112.43 174.78 Z"
+        fill="#3b82f6"
+      />
 
-              {/* Average (Orange) 15% */}
-              <path
-                d="M 130 175 A 80 80 0 0 1 77 162 L 120 95 Z"
-                fill="#f97316"
-              />
+      {/* Average (Orange) 15% - continues 54° more */}
+      <path
+        d="M 120 95 L 112.43 174.78 A 80 80 0 0 1 49.91 106.99 Z"
+        fill="#f97316"
+      />
 
-              {/* Needs Improvement (Red) - remaining */}
-              <path
-                d="M 77 162 A 80 80 0 0 1 42 95 L 120 95 Z"
-                fill="#ef4444"
-              />
+      {/* Needs Improvement (Red) 2% - tiny 7.2° sliver */}
+      <path
+        d="M 120 95 L 49.91 106.99 A 80 80 0 0 1 120 15 Z"
+        fill="#ef4444"
+      />
 
-              {/* Complete the circle */}
-              <path
-                d="M 42 95 A 80 80 0 0 1 120 20 L 120 95 Z"
-                fill="#ef4444"
-              />
+      {/* Leader lines */}
+      <line x1="170" y1="50" x2="205" y2="30" stroke="#10b981" strokeWidth="1" />
+      <line x1="160" y1="145" x2="195" y2="160" stroke="#3b82f6" strokeWidth="1" />
+      <line x1="90" y1="165" x2="60" y2="180" stroke="#f97316" strokeWidth="1" />
+      <line x1="55" y1="105" x2="20" y2="95" stroke="#ef4444" strokeWidth="1" />
+    </svg>
 
-              {/* Inner white circle for donut effect */}
-              <circle cx="120" cy="95" r="50" fill="white" />
-            </svg>
+    {/* Labels */}
+    <div className="absolute top-4 right-2">
+      <div className="text-xs text-green-600 font-medium whitespace-nowrap">Excellent 48%</div>
+    </div>
+    <div className="absolute bottom-4 right-2">
+      <div className="text-xs text-blue-600 font-medium whitespace-nowrap">Good 35%</div>
+    </div>
+    <div className="absolute bottom-1 left-4">
+      <div className="text-xs text-orange-600 font-medium whitespace-nowrap">Average 15%</div>
+    </div>
+    <div className="absolute top-1/2 -translate-y-1/2 -left-2">
+      <div className="text-xs text-red-600 font-medium whitespace-nowrap">Needs Improvement</div>
+    </div>
+  </div>
+</div>
 
-            {/* Labels positioned around the donut */}
-            <div className="absolute top-2 left-1/2 -translate-x-1/2">
-              <div className="text-[10px] text-green-600 font-medium whitespace-nowrap">Excellent 48%</div>
-            </div>
-            <div className="absolute bottom-6 right-4">
-              <div className="text-[10px] text-blue-600 font-medium whitespace-nowrap">Good 35%</div>
-            </div>
-            <div className="absolute bottom-8 left-1">
-              <div className="text-[10px] text-orange-600 font-medium whitespace-nowrap">Average 15%</div>
-            </div>
-            <div className="absolute top-1/2 -left-2 -translate-y-1/2">
-              <div className="text-[10px] text-red-600 font-medium whitespace-nowrap">Needs Improvement</div>
-            </div>
-          </div>
-        </div>
+
+
+
+
+
 
         {/* Communication Efficiency */}
         <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-5">
