@@ -36,21 +36,33 @@ A modern React-based executive dashboard that provides comprehensive organizatio
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone the repository: `git clone <repository-url>`
 
-git clone <repository-url>
+2. Install dependencies: `npm install`
 
-2. Install dependencies::
+3. Run development server: `npm run dev`
 
-npm install
+# Scripts
 
-3. Run development server:
+`npm run dev` - Start development server
 
-npm run dev
+`npm run build` - Build for production
 
-Scripts
-npm run dev - Start development server
-npm run build - Build for production
-npm run lint - Run ESLint
-npm run preview - Preview production build
-npm run typecheck - Run TypeScript checks
+`npm run lint` - Run ESLint
+
+`npm run preview` - Preview production build
+
+`npm run typecheck` - Run TypeScript checks
+
+
+#Project Structure 
+
+```
+src/
+  ├── components/         # React components
+  ├── utils/             # Utility functions
+  ├── App.tsx           # Main application component
+  ├── main.tsx         # Application entry point
+  └── index.css        # Global styles
+```
+
